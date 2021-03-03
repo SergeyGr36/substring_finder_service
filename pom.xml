@@ -8,8 +8,14 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.target>1.9</maven.compiler.target>
-        <maven.compiler.source>14</maven.compiler.source>
+        <!--<maven.compiler.target>1.9</maven.compiler.target>
+        <maven.compiler.source>14</maven.compiler.source>-->
+        <start-class>com.test.month.FinderApp</start-class>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <!--Add this 14 and 15-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
     <dependencies>
         <dependency>
@@ -23,6 +29,31 @@
             <version>1.18.18</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <version>3.3.0</version>
+        </dependency>
     </dependencies>
-
+    <!--Add Build folder-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.4.3</version>
+                <configuration>
+                    <fork>true</fork>
+                    <mainClass>com.test.month.FinderApp</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
