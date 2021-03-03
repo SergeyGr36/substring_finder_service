@@ -17,23 +17,33 @@ import java.util.stream.Collectors;
 public class FinderServiceImpl implements FinderService {
     private final List<ValueDTO> data;
     private ValueDTO dto;
+
     public FinderServiceImpl() {
         data = new ArrayList<>();
         fillInitialData();
     }
 
     public List<ValueDTO> findResult(String input) {
-    return input==null?data:data.stream()
-            .filter(valueDTO -> valueDTO.getValue().toUpperCase().contains(input.toUpperCase()))
-            .collect(Collectors.toList());
+        return input == null ? data : data.stream()
+                .filter(valueDTO -> valueDTO.getValue().toUpperCase().contains(input.toUpperCase()))
+                .collect(Collectors.toList());
     }
 
     public ValueDTO createNewPosition(String input) {
         data.add(new ValueDTO((data.size() + 1), input));
         return data.get(data.size() - 1);
     }
+
     public boolean deletePosition(ValueDTO dto) {
         return data.remove(dto);
+    }
+
+    public void updatePosition(ValueDTO dto) {
+        for (int i = 0; i < data.size(); i++) {
+            if (data.get(i).getId() == dto.getId()) {
+                data.get(i).setValue(dto.getValue());
+            }
+        }
     }
 
     private void fillInitialData() {

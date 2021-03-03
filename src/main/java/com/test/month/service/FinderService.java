@@ -8,4 +8,5 @@ public interface FinderService {
     List<ValueDTO> findResult(String input);
     ValueDTO createNewPosition(String input);
     boolean deletePosition(ValueDTO dto);
+    void updatePosition(ValueDTO dto);
 }
