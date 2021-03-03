@@ -11,8 +11,8 @@
         <!--<maven.compiler.target>1.9</maven.compiler.target>
         <maven.compiler.source>14</maven.compiler.source>-->
         <start-class>com.test.month.FinderApp</start-class>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.9</maven.compiler.source>
+        <maven.compiler.target>1.9</maven.compiler.target>
         <!--Add this 14 and 15-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
