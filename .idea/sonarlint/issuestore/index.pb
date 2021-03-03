@@ -1,6 +1,4 @@
 
-s
-Csrc/main/java/com/test/month/exception/WrongInputDataException.java,a/6/a6763fcfbe504028155766b125d4209bb8000946
 g
 7src/main/java/com/test/month/service/FinderService.java,b/b/bb0983dbd51f397365d4a2a3738b4ee40333399c
 [

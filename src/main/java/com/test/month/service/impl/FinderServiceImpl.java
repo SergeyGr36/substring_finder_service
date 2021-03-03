@@ -16,8 +16,7 @@ import java.util.stream.Collectors;
 @Service
 public class FinderServiceImpl implements FinderService {
     private final List<ValueDTO> data;
-    private ValueDTO dto;
-
+    private int count=0;
     public FinderServiceImpl() {
         data = new ArrayList<>();
         fillInitialData();
@@ -30,11 +29,13 @@ public class FinderServiceImpl implements FinderService {
     }
 
     public ValueDTO createNewPosition(String input) {
-        data.add(new ValueDTO((data.size() + 1), input));
+        data.add(new ValueDTO(count, input));
+        count++;
         return data.get(data.size() - 1);
     }
 
     public boolean deletePosition(ValueDTO dto) {
+        count++;
         return data.remove(dto);
     }
 
@@ -53,5 +54,6 @@ public class FinderServiceImpl implements FinderService {
             key = i + 1;
             data.add(new ValueDTO(key, months[i].name()));
         }
+        count=data.size()+1;
     }
 }
