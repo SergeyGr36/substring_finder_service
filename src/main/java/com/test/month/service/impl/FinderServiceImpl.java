@@ -35,7 +35,6 @@ public class FinderServiceImpl implements FinderService {
     }
 
     public boolean deletePosition(ValueDTO dto) {
-        count++;
         return data.remove(dto);
     }
 
